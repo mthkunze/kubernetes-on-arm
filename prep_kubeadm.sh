@@ -13,5 +13,11 @@ free -m
 kubeadm reset
 kubeadm init --pod-network-cidr=10.244.0.0/16 #   --skip-preflight-checks
 
+export KUBECONFIG=/etc/kubernetes/kubelet.conf
+
+kubectl get nodes
+
+kubectl get pods
+
 curl --cacert /etc/kubernetes/pki/ca.crt --cert /etc/kubernetes/pki/apiserver-kubelet-client.crt --key /etc/kubernetes/pki/apiserver-kubelet-client.key https://192.168.1.1:6443
 
